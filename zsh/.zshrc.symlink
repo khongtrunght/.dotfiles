@@ -167,7 +167,7 @@ export PATH=$PATH:/Users/phanmanhtuan/go/bin
 alias ls="exa"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 # --- added by primeagen_setup ---
-export PATH="$PATH:$HOME/.dotfiles/config/scripts"
+export PATH="$PATH:$HOME/.dotfiles/scripts"
 # bindkey -s ^f "tmux-sessionizer\n"
 # --- end primeagen_setup ---
 export SSLKEYLOGFILE=~/.ssl-key.log
