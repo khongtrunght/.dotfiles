@@ -28,6 +28,8 @@
           pkgs.carapace
           pkgs.wezterm
           pkgs.bat
+          pkgs.yazi
+          pkgs.direnv
           inputs.home-manager.packages.${pkgs.system}.default
         ];
 
@@ -64,7 +66,6 @@
       '';
 
       system.defaults = {
-          dock.autohide = true;
           dock.persistent-apps = [
             "${pkgs.wezterm}/Applications/WezTerm.app"
             "/Applications/Google Chrome.app"

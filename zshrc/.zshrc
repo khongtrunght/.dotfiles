@@ -102,9 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 ## exa
 alias ls="eza" # ls
@@ -115,7 +112,49 @@ alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 alias lS='eza -1' # one column, just names
 alias lt='eza --tree --level=2' # tree
 
+# Git
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gp="git push origin HEAD"
+alias gpu="git pull origin"
+alias gst="git status"
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gadd='git add'
+alias ga='git add -p'
+alias gcoall='git checkout -- .'
+alias gr='git remote'
+alias gre='git reset'
+
+# VI Mode!!!
+bindkey jj vi-cmd-mode
+
+# Eza
+alias l="eza -l --icons --git -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias ltree="eza --tree --level=2  --icons --git"
+
+### FZF ###
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/run/current-system/sw/bin:$PATH
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 source <(fzf --zsh)
+export XDG_CONFIG_HOME="/Users/khongtrunght/.config"
+
+eval "$(zoxide init zsh)"
+# eval "$(atuin init zsh)"
+eval "$(direnv hook zsh)"

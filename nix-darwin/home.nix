@@ -43,13 +43,14 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc'
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/nvim".source = ~/dotfiles/nvim;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
     ".config/wezterm".source = ~/dotfiles/wezterm;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
     ".tmux.conf".source = ~/dotfiles/tmux/.tmux.conf;
     ".config/karabiner".source = ~/dotfiles/karabiner;
     ".config/starship".source = ~/dotfiles/starship;
-    ".zshrc".source = ~/dotfiles/zshrc/.zshrc;
+    ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/zshrc/.zshrc";
+    ".config/nushell".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nushell";
 
 
     # # You can also set the file content immediately.
