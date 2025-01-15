@@ -1,7 +1,7 @@
 # APPS #
 #
 # Safari
-alt - s : run-external "open" "-a" "/Applications/Safari.app/Contents/MacOS/Safari"
+alt - s : run-external "open" "-a" "/Applications/Safari.app/Contents/MacOS/Google Chrome"
 
 # Telegram
 alt - t : run-external "open" "-a" "/Applications/Telegram.app/Contents/MacOS/Telegram"

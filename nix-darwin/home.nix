@@ -46,7 +46,7 @@
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
     ".config/wezterm".source = ~/dotfiles/wezterm;
     ".config/nix-darwin".source = ~/dotfiles/nix-darwin;
-    ".config/tmux".source = ~/dotfiles/tmux;
+    ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/tmux";
     ".config/karabiner".source = ~/dotfiles/karabiner;
     ".config/starship".source = ~/dotfiles/starship;
     ".zshrc".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/zshrc/.zshrc";

@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 return {
 	-- color_scheme = 'termnial.sexy',
 	color_scheme = "Catppuccin Mocha",
-	enable_tab_bar = false,
+	enable_tab_bar = true,
 	font_size = 16.0,
 	font = wezterm.font("JetBrainsMono Nerd Font"),
 	-- macos_window_background_blur = 40,

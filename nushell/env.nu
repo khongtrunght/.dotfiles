@@ -111,6 +111,9 @@ path add /usr/local/bin
 path add /opt/homebrew/bin
 path add ($env.GOPATH | path join 'bin')
 path add ($env.HOME | path join '.local' 'bin')
+path add ($env.HOME | path join ".atuin" "bin")
+$env.CARGO_HOME = ($env.HOME | path join '.cargo')
+path add ($env.CARGO_HOME | path join "bin")
 
 $env.PATH = ($env.PATH | split row (char esep) | prepend $"(pyenv root)/shims")
 
