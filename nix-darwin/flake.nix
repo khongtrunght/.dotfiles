@@ -48,8 +48,6 @@
 
       users.users.khongtrunght.home = "/Users/khongtrunght";
       home-manager.backupFileExtension = "backup";
-      nix.configureBuildUsers = true; # Build user if not exists
-      nix.useDaemon = true;
 
 
       fonts.packages = [
@@ -76,9 +74,6 @@
           ];
         };
 
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -94,7 +89,7 @@
       # $ darwin-rebuild changelog
       system.stateVersion = 5;
 
-      security.pam.enableSudoTouchIdAuth = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
